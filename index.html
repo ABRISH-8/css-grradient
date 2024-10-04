@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #h1{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #color_box{
+            width: 900px;
+            height: 200px;
+            background: purple;
+            padding-left: 50px;
+        }
+        
+        input[type="color"] {
+            width: 120px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            margin: 0 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        button:hover {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">CSS GRADIENT</h1>
+    <div id="color_box"></div>
+    <br>
+    <input type="color" id="color1">
+    <p id="text1"></p>
+    <br>
+    <input type="color" id="color2">
+    <p id="text2"></p>
+    <br>
+    <button id="Gradient_btn">Linear Gradient</button>
+    <button id="radial_btn">Radial Gradient</button>
+    <script>
+            document.getElementById('Gradient_btn').addEventListener('click',function () {
+           let color1 =document.getElementById('color1').value     
+           let color2 =document.getElementById('color2').value 
+           document.getElementById('text1').innerHTML =color1
+           document.getElementById('text2').innerHTML =color2
+           console.log(color1+color2)
+
+           let Gradient_box = document.getElementById('color_box')
+           Gradient_box.style.background = 'linear-gradient('+color1+' 0%,'+color2+' 100%)'
+
+            })
+            
+            document.getElementById('radial_btn').addEventListener('click',function () {
+           let color1 =document.getElementById('color1').value     
+           let color2 =document.getElementById('color2').value 
+           document.getElementById('text1').innerHTML =color1
+           document.getElementById('text2').innerHTML =color2
+           console.log(color1+color2)
+
+           let Gradient_box = document.getElementById('color_box')
+           Gradient_box.style.background = 'radial-gradient('+color1+'0%,'+color2+'100%)'
+
+        })
+    </script>
+
+</body>
+</html>
